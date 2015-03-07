@@ -1,5 +1,5 @@
 plot2 <- function() {
-  print("Plot 2 working...") 
+  message("Plot 2 working...") 
   
   #Source data: https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
   
@@ -16,8 +16,8 @@ plot2 <- function() {
                    na.strings = "?", 
                    skip = 66637, 
                    nrows = 2880, 
-                   col.names = colNames
-  )
+                   col.names = colNames)
+  
   #combine date and time columns, convert to POSIXlt
   elec$datetime <- strptime(paste(elec$Date, elec$Time), "%d/%m/%Y %T")
 
@@ -30,5 +30,5 @@ plot2 <- function() {
        xlab = "")
   dev.off()
 
-  print("Plot 2 done.") 
+  message("Plot 2 done.") 
 }

@@ -1,5 +1,5 @@
 plot1 <- function() {
-  print("Plot 1 working...") 
+  message("Plot 1 working...") 
   
   #Source data: https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
   
@@ -28,5 +28,5 @@ plot1 <- function() {
        main = "Global Active Power")
   dev.off()
     
-  print("Plot 1 done.") 
+  message("Plot 1 done.") 
 }

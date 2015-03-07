@@ -1,5 +1,5 @@
 plot4 <- function() {
-  print("Plot 4 working...") 
+  message("Plot 4 working...") 
   
   #Source data: https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
   
@@ -11,15 +11,17 @@ plot4 <- function() {
                    na.strings = "?", 
                    skip = 66637, 
                    nrows = 2880, 
-                   col.names = colNames
-  )
+                   col.names = colNames)
   #combine date and time columns, convert to POSIXlt
   elec$datetime <- strptime(paste(elec$Date, elec$Time), "%d/%m/%Y %T")
   
   
   
   png(file = "plot4.png", bg = "transparent", width = 480, height = 480)
+  
+  #Set up the grid to hold multiple plots
   par(mfrow = c(2, 2))
+  
   #First plot
   plot(elec$datetime, elec$Global_active_power, type = "l", 
        ylab = "Global Active Power", xlab = "")
@@ -47,5 +49,5 @@ plot4 <- function() {
   
   dev.off()
   
-  print("Plot 4 done.") 
+  message("Plot 4 done.") 
 }
